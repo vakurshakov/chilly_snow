@@ -1,2 +1,2 @@
-# chilly_snow
+## chilly snow
 simple game, using glut
