@@ -14,10 +14,18 @@
 #include <GL/gl.h>
 #include <GL/freeglut.h>
 
+#include "tree.h"
+#include "glut_window.h" // for g_SCREEN_%
+
 
 //! @brief The main render callback, used to pass into glutDisplayFunc
 void
 draw_callback();
+
+
+//! @brief Draws input tree using old style opengl. Uses g_SCREEN_%
+void
+draw_tree(tree_t tree);
 
 
 #endif // DRAWER_H

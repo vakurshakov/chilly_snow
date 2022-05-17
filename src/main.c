@@ -6,6 +6,8 @@ main (int argc, char** argv)
 {
     initialize_window(argc, argv);
 
+    initialize_forest(0);
+
 	glClearColor(0.847, 0.901, 1, 1.0);
 
     glutDisplayFunc(draw_callback);

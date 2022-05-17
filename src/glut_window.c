@@ -17,4 +17,28 @@ initialize_window(int argc, char *argv[])
 	glutInitWindowSize(g_SCREEN_WIDTH, g_SCREEN_HEIGHT);
 	
     glutCreateWindow("chilly snow");
+
+    glutReshapeFunc(reshape_window_callback);
+}
+
+
+void
+reshape_window_callback(int new_width, int new_height)
+{
+    extern int g_SCREEN_WIDTH;
+    extern int g_SCREEN_HEIGHT;
+
+    g_SCREEN_WIDTH = new_width;
+    g_SCREEN_HEIGHT = new_height;
+
+    // Set viewport to the new one
+    glViewport(0, 0, new_width, new_height);
+	
+    // Set orthographic projection to ours
+    glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+    gluOrtho2D(ORTHO_LEFT, ORTHO_RIGHT, ORTHO_BOTTOM, ORTHO_TOP);
+	
+    // Reset matrix mode to default
+    glMatrixMode(GL_MODELVIEW);
 }
