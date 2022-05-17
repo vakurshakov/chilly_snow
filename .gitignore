@@ -51,6 +51,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# CMake internal
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
@@ -62,3 +63,9 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+
+# Intermediate ouput
+bin-int
+
+# VScode configures
+*.json
