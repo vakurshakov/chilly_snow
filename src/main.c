@@ -15,6 +15,10 @@ main (int argc, char** argv)
 
     glutDisplayFunc(draw_callback);
 
+    glutTimerFunc(0, draw_timer_callback, 0);
+
+    glutSpecialFunc(ball_move_callback);
+
     glutMainLoop();
 
     return EXIT_SUCCESS;

@@ -22,6 +22,8 @@
 #define ORTHO_BOTTOM            -10
 #define ORTHO_TOP               +10
 
+#define FPS                     60
+
 extern int g_SCREEN_WIDTH;
 extern int g_SCREEN_HEIGHT;
 
