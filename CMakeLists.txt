@@ -11,6 +11,8 @@ add_executable(${PROJECT_NAME}
     src/main.c
 )
 
+add_compile_definitions(DEBUG)
+
 add_subdirectory(external/FreeGLUT)
 
 target_include_directories(${PROJECT_NAME}
@@ -26,5 +28,6 @@ target_link_directories(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME}
     glut
     GLU
+    m
     ${OPENGL_LIBRARY}
 )

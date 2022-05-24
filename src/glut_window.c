@@ -17,8 +17,6 @@ initialize_window(int argc, char *argv[])
 	glutInitWindowSize(g_SCREEN_WIDTH, g_SCREEN_HEIGHT);
 	
     glutCreateWindow("chilly snow");
-
-    glutReshapeFunc(reshape_window_callback);
 }
 
 
