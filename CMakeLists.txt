@@ -6,6 +6,7 @@ find_package(OpenGL REQUIRED)
 
 add_executable(${PROJECT_NAME}
     src/glut_window.c
+    src/physics.c
     src/drawer.c
     src/ball.c
     src/tree.c

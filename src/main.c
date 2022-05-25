@@ -1,4 +1,5 @@
 #include "glut_window.h"
+#include "physics.h"
 #include "drawer.h"
 
 
@@ -18,6 +19,8 @@ main (int argc, char** argv)
     glutTimerFunc(0, draw_timer_callback, 0);
 
     glutSpecialFunc(ball_move_callback);
+
+    glutTimerFunc(0, physics_timer_callback, 0);
 
     glutMainLoop();
 

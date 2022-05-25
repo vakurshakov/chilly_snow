@@ -17,6 +17,7 @@
 // Physics constants
 #define BALL_Y          2.0f
 #define BALL_RADIUS     0.5f
+#define BALL_SPEED_ADD  5e-5f
 
 // Graphics constants
 #define BALL_COLOR_GB   0.113f, 0.027f 
