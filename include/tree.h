@@ -46,6 +46,12 @@ extern tree_t g_forest[NUMBER_OF_TREES];
 
 #define COLLIDER_SIZE_REDUCTION 1.09f
 
+// Collision detection
+#define INTERSECTING_COLOR 		1.0f, 1.0f, 0.0f
+#define NOT_INTERSECTING_COLOR	1.0f, 0.0f, 0.0f
+
+extern int intersected_tree;
+
 
 /**
  * @brief Initializes the tree. X-coordinate and size choosen
@@ -74,7 +80,7 @@ draw_tree(tree_t tree);
 
 //! @note Uses g_SCREEN_%
 void
-draw_tree_collider(tree_t tree);
+draw_tree_collider(tree_t tree, float r, float g, float b);
 
 
 #endif // TREE_H

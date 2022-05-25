@@ -1,6 +1,7 @@
 #include "tree.h"
 
 tree_t g_forest[NUMBER_OF_TREES];
+int intersected_tree = 0;
 
 
 float
@@ -87,7 +88,7 @@ draw_tree(tree_t tree)
 
 
 void
-draw_tree_collider(tree_t tree)
+draw_tree_collider(tree_t tree, float r, float g, float b)
 {
     extern int g_SCREEN_WIDTH;
     extern int g_SCREEN_HEIGHT;
@@ -101,7 +102,7 @@ draw_tree_collider(tree_t tree)
 
     glBegin(GL_LINE_LOOP);
 
-		glColor3f(1.0f, 0.0f, 0.0f);
+		glColor3f(r, g, b);
 
 		glVertex2f(x * aspect, y - s * COLLIDER_SIZE_REDUCTION);
 		glVertex2f((x - TREE_WIDTH3 * s) * aspect, y - TREE_HEIGHT2 * s);

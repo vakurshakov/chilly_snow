@@ -6,18 +6,21 @@ intersection_state g_state = NOT_INTERSECTING;
 void
 physics_timer_callback(int value)
 {
-    glutTimerFunc(999 / FPS, physics_timer_callback, 0);   // Set up next timer 
+    glutTimerFunc(1000 / FPS, physics_timer_callback, 0);   // Set up next timer 
 
     extern float ball_speed;
     extern tree_t g_forest[NUMBER_OF_TREES];
     
     extern intersection_state g_state;
+    extern int intersected_tree;
 
     for (int i = 0; i < NUMBER_OF_TREES; ++i)
     {
 		g_forest[i].y += ball_speed;
         
         g_state = check_ball_tree_collision(g_forest[i]);
+
+        if (g_state == INTERSECTING) intersected_tree = i;
 
         //! @todo: move tree-planting outside
         if (g_forest[i].y - (TREE_HEIGHT2 + TRUNK_HEIGHT) * g_forest[i].size > ORTHO_TOP)

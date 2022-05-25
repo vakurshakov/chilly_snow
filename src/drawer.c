@@ -7,6 +7,8 @@ draw_callback()
     extern float ball_x;
     extern tree_t g_forest[NUMBER_OF_TREES];
 
+    extern int intersected_tree;
+
 	glClear(GL_COLOR_BUFFER_BIT);
 	
     glLoadIdentity();
@@ -18,7 +20,14 @@ draw_callback()
         draw_tree(g_forest[i]);
     
     #if DEBUG
-        draw_tree_collider(g_forest[i]);
+        if (i == intersected_tree)
+        {
+            draw_tree_collider(g_forest[i], INTERSECTING_COLOR);
+        }
+        else
+        {
+            draw_tree_collider(g_forest[i], NOT_INTERSECTING_COLOR);
+        }
     #endif
     }
 
