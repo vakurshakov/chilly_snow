@@ -15,9 +15,10 @@
 
 
 // Physics constants
-#define BALL_Y          2.0f
-#define BALL_RADIUS     0.5f
-#define BALL_SPEED_ADD  5e-5f
+#define BALL_Y              2.0f
+#define BALL_RADIUS         0.5f
+#define BALL_SPEED_ADD      1e-6f
+#define BALL_MOVE_MODIFIER  0.6f
 
 // Graphics constants
 #define BALL_COLOR_GB   0.113f, 0.027f 
@@ -26,9 +27,9 @@ extern float ball_x;
 extern float ball_speed;
 
 
-//! @brief Move callback used to pass it into glutSpecialFunc
+//! @brief Carries ball x-coordinate update 
 void
-ball_move_callback(int key, int _1, int _2);
+move_ball();
 
 
 //! @note Uses g_SCREEN_%

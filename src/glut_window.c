@@ -3,6 +3,8 @@
 int g_SCREEN_WIDTH =      800;
 int g_SCREEN_HEIGHT =     600;
 
+unsigned char key_states[256];
+
 
 void
 initialize_window(int argc, char *argv[])
@@ -17,6 +19,13 @@ initialize_window(int argc, char *argv[])
 	glutInitWindowSize(g_SCREEN_WIDTH, g_SCREEN_HEIGHT);
 	
     glutCreateWindow("chilly snow");
+
+    // Prepare event handlers
+    glutReshapeFunc(reshape_window_callback);
+
+    glutSpecialFunc(key_pressed_callback);
+    
+    glutSpecialUpFunc(key_released_callback);
 }
 
 
@@ -39,4 +48,24 @@ reshape_window_callback(int new_width, int new_height)
 	
     // Reset matrix mode to default
     glMatrixMode(GL_MODELVIEW);
+}
+
+
+void
+key_pressed_callback(int key, int mouse_x, int mouse_y)
+{
+    if (key > 0 && key < 256)
+    {
+        key_states[key] = KEY_PRESSED;
+    }
+}
+
+
+void
+key_released_callback(int key, int mouse_x, int mouse_y)
+{
+    if (key > 0 && key < 256)
+    {
+        key_states[key] = KEY_NOT_PRESSED;
+    }
 }

@@ -27,7 +27,12 @@
 extern int g_SCREEN_WIDTH;
 extern int g_SCREEN_HEIGHT;
 
- 
+#define KEY_PRESSED             1
+#define KEY_NOT_PRESSED         0
+
+extern unsigned char key_states[256];    // Key buffer
+
+
 //! @brief Set up window using freeglut 
 void
 initialize_window(int argc, char *argv[]);
@@ -36,5 +41,16 @@ initialize_window(int argc, char *argv[]);
 //! @brief Internal. Used to change window size and reset ortho-projection  
 void
 reshape_window_callback(int, int);
+
+
+//! @brief Internal. Used to handle key pressed events
+void
+key_pressed_callback(int key, int mouse_x, int mouse_y);
+
+
+//! @brief Internal. Used to handle key released events
+void
+key_released_callback(int key, int mouse_x, int mouse_y);
+
 
 #endif // GLUT_WINDOW_H

@@ -8,6 +8,8 @@ physics_timer_callback(int value)
 {
     glutTimerFunc(1000 / FPS, physics_timer_callback, 0);   // Set up next timer 
 
+    move_ball();
+
     extern float ball_speed;
     extern tree_t g_forest[NUMBER_OF_TREES];
     

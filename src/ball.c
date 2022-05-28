@@ -4,18 +4,20 @@ float ball_x =          0.00f;
 float ball_speed =      0.09f;
 
 
-void
-ball_move_callback(int key, int x, int y)
-{
-	extern float ball_x;
 
-	if(key == GLUT_KEY_LEFT)
+void
+move_ball()
+{
+    extern float ball_x;
+    extern unsigned char key_states[256];
+
+    if(key_states[GLUT_KEY_LEFT] == KEY_PRESSED)
 	{
-		ball_x -= ball_speed;
+		ball_x -= ball_speed * BALL_MOVE_MODIFIER;
 	}
-	else if(key == GLUT_KEY_RIGHT)
+	else if(key_states[GLUT_KEY_RIGHT] == KEY_PRESSED)
 	{
-		ball_x += ball_speed;
+		ball_x += ball_speed * BALL_MOVE_MODIFIER;
 	}
 }
 
