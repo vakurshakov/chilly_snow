@@ -1,3 +1,6 @@
 [submodule "external/FreeGLUT"]
 	path = external/FreeGLUT
 	url = https://github.com/FreeGLUTProject/freeglut.git
+[submodule "external/stb"]
+	path = external/stb
+	url = https://github.com/nothings/stb.git
