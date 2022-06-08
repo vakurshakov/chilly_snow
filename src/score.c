@@ -9,27 +9,28 @@ static text_t score = {
 };
 
 
-char*
+int
 calculate_score()
 {
     extern float ball_speed;
-    int score = (int) ((ball_speed - 0.09f) / (30.0f * BALL_SPEED_ADD));
+    int result = (int) ((ball_speed - 0.09f) / (30.0f * BALL_SPEED_ADD));
 
-    static char score_string[500];
-    sprintf(score_string, "%d", score);
-
-    return score_string;
+    return result;
 }
 
 
 void
 draw_score()
 {
-    score.text = calculate_score();
+    int result = calculate_score();
+    
+    static char score_text[500];
+    sprintf(score_text, "%d", result);
+    score.text = score_text;
 
     float width = stb_easy_font_width(score.text);
 
-    score.x = - (float) width / 2.; 
+    score.x = - width / 2.;
 
     draw_text(score);
 }

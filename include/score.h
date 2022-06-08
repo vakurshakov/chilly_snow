@@ -12,12 +12,12 @@
 
 #include <stdio.h>  // for sprintf
 
-#include "text.h"
 #include "ball.h"   // score calculated from ball_speed
+#include "text.h"
 
 
-//! @note Uses initial ball_speed and BALL_SPEED_ADD 
-char*
+//! @note Uses initial ball_speed and BALL_SPEED_ADD
+int
 calculate_score();
 
 
