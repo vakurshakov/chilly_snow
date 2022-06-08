@@ -31,13 +31,12 @@ draw_ball(float ball_x)
     // X-coordinates multiplied by 1. / aspect, so circle keeps its shape
     float aspect = (float) g_SCREEN_WIDTH / g_SCREEN_HEIGHT;
 
-    static double PI;
-    PI = 4.0 * atan(1.0);
+    static const float PI = (const float) 4.0 * atan(1.0);
 
     // Circle is drawn as a set of vertices
 	glBegin(GL_POLYGON);
 
-        for(double phi = 0; phi <= 2. * PI; phi += 0.01)
+        for(float phi = 0; phi <= 2. * PI; phi += 0.01)
 	    {
             // Making a shadow with changing red component
             glColor3f((1. - (phi - 2.) / (2. * PI)), BALL_COLOR_GB);
