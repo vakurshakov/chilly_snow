@@ -4,9 +4,10 @@ This is a simple game, using glut.
 
 Configure and build with cmake.
 
-Shell straightforward commands
+Shell straightforward commands:
 
     ./GenerateProject.sh
     ./BuildProject.sh
     ./RunProject.sh
 
+Use arrows as a control key.
