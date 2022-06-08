@@ -5,6 +5,8 @@ int g_SCREEN_HEIGHT =     600;
 
 unsigned char key_states[256];
 
+game_state_t g_game_state = ENTRY;
+
 
 void
 initialize_window(int argc, char *argv[])
@@ -23,8 +25,11 @@ initialize_window(int argc, char *argv[])
     // Prepare event handlers
     glutReshapeFunc(reshape_window_callback);
 
+    // Here key codes don't overlap, implicit uchar-int conversion
+    glutKeyboardFunc(key_pressed_callback);
     glutSpecialFunc(key_pressed_callback);
     
+    glutKeyboardUpFunc(key_released_callback);
     glutSpecialUpFunc(key_released_callback);
 }
 

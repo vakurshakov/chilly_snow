@@ -32,6 +32,15 @@ extern int g_SCREEN_HEIGHT;
 
 extern unsigned char key_states[256];    // Key buffer
 
+typedef enum game_state_t
+{
+    GAME=0,
+    ENTRY,
+    END,
+} game_state_t;
+
+extern game_state_t g_game_state;
+
 
 //! @brief Set up window using freeglut 
 void

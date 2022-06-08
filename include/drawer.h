@@ -16,6 +16,8 @@
 
 #include "tree.h"
 #include "ball.h"
+#include "score.h"
+#include "menus.h"
 #include "glut_window.h" // for g_SCREEN_%
 
 
@@ -24,9 +26,16 @@ void
 draw_callback();
 
 
-//! @brief Used to manipulate draw calls, introduces animation
 void
-draw_timer_callback(int value);
+draw_game();
+
+
+void
+draw_entry_menu();
+
+
+void
+draw_end_game();
 
 
 #endif // DRAWER_H

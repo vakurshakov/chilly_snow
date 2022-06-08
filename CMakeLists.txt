@@ -8,18 +8,23 @@ add_executable(${PROJECT_NAME}
     src/glut_window.c
     src/physics.c
     src/drawer.c
+    src/events.c
+    src/menus.c
+    src/score.c
+    src/text.c
     src/ball.c
     src/tree.c
     src/main.c
 )
 
-add_compile_definitions(DEBUG)
-
+add_compile_definitions(DEBUG) # Game wouldn't stop (collision detection)
+ 
 add_subdirectory(external/FreeGLUT)
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC include
     PUBLIC external/FreeGLUT/include
+    PUBLIC external/stb
     PUBLIC ${OPENGL_INCLUDE_DIRS}
 )
 
