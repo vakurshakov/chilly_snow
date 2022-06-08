@@ -24,7 +24,7 @@ typedef struct tree_t
 	float size;     // Size of the tree
 } tree_t;
 
-#define NUMBER_OF_TREES     15
+#define NUMBER_OF_TREES     20
 #define MINIMUM_TREE_SIZE   0.2f
 #define MAXIMUM_TREE_SIZE   0.3f
 
@@ -55,17 +55,13 @@ extern int intersected_tree;
 
 /**
  * @brief Initializes the tree. X-coordinate and size choosen
- * 		randomly, using ORTHO_% and %_TREE_SIZE
+ *		randomly, using ORTHO_% and %_TREE_SIZE
  * 
- * @see window.h 
- * 
- * @param y_pos Y-coordinate of the planted tree 
- * @return tree_t
- * 
- * @todo tree_t* as a parameter
+ * @param y_pos_min minimum of random Y-coordinate 
+ * @param y_pos_max maximum of random Y-coordinate
  */
-tree_t
-plant_tree(float y_pos);
+void
+plant_tree(tree_t *tree, float y_pos_min, float y_pos_max);
 
 
 //! @brief Initializes g_forest using random numbers with a given seed

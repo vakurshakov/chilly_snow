@@ -16,7 +16,7 @@ handle_events(int value)
     
             ball_x = 0;
             ball_speed = 0.09f;
-            initialize_forest(0);
+            initialize_forest(time(NULL));
             glutTimerFunc(0, physics_timer_callback, 0);
             
             game_initialized = 1;

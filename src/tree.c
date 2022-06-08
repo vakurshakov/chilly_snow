@@ -1,7 +1,7 @@
 #include "tree.h"
 
 tree_t g_forest[NUMBER_OF_TREES];
-int intersected_tree = 0;
+int intersected_tree = -1;
 
 
 float
@@ -12,16 +12,12 @@ float_rand(float min, float max)
 }
 
 
-tree_t
-plant_tree(float y_pos)
+void
+plant_tree(tree_t *tree, float y_pos_min, float y_pos_max)
 {
-    tree_t tree;
-
-    tree.size = float_rand(MINIMUM_TREE_SIZE, MAXIMUM_TREE_SIZE);
-	tree.x    = float_rand((float)ORTHO_LEFT, (float)ORTHO_RIGHT);
-	tree.y    = y_pos;
-
-    return tree;
+    tree->size = float_rand(MINIMUM_TREE_SIZE, MAXIMUM_TREE_SIZE);
+	tree->x    = float_rand((float)ORTHO_LEFT, (float)ORTHO_RIGHT);
+	tree->y    = float_rand(y_pos_min, y_pos_max);
 }
 
 
@@ -35,9 +31,7 @@ initialize_forest(unsigned int seed)
     for (int i = 0; i < NUMBER_OF_TREES; ++i)
     {
         // Let opengl draw tree below the window border
-        float y_pos = float_rand((float)ORTHO_BOTTOM, (float)ORTHO_TOP);
-
-	    g_forest[i] = plant_tree(y_pos);
+	    plant_tree(&g_forest[i], (float) 2 * ORTHO_BOTTOM, 0);
     }
 }
 

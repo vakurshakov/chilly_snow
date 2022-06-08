@@ -13,7 +13,7 @@ char*
 calculate_score()
 {
     extern float ball_speed;
-    int score = (int) ((ball_speed - 0.09f) / (10.0f * BALL_SPEED_ADD));
+    int score = (int) ((ball_speed - 0.09f) / (30.0f * BALL_SPEED_ADD));
 
     static char score_string[500];
     sprintf(score_string, "%d", score);

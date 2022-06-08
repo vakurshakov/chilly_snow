@@ -29,7 +29,9 @@ physics_timer_callback(int value)
         //! @todo: move tree-planting outside
         if (g_forest[i].y - (TREE_HEIGHT2 + TRUNK_HEIGHT) * g_forest[i].size > ORTHO_TOP)
         {
-            g_forest[i] = plant_tree(ORTHO_BOTTOM);
+            plant_tree(&g_forest[i], (float) 2. * ORTHO_BOTTOM, (float)ORTHO_BOTTOM);
+
+            if (i == intersected_tree) intersected_tree = -1;
         }
 	}
 
