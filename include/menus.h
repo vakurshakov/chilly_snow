@@ -12,18 +12,19 @@
 
 #include <string.h> // for strcmp
 
-#include "glut_window.h"
+#include "glut_window.h"    // for key_states, KEY_%PRESSED
 #include "text.h"
 
 
 typedef struct button_t
 {
-    float vertices[8];
-    float r, g, b;
-    text_t message;
+    float vertices[8];  // Button rectangle 
+    float r, g, b;      // Button color
+    text_t message;     // Button's text 
 } button_t;
 
 
+// Buttons presets
 #define ENTRY_MENU_BUTTONS_NUMBER      2  
 #define END_GAME_BUTTONS_NUMBER        2
 

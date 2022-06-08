@@ -4,8 +4,9 @@
 /**
  * @file    tree.h
  * @author  Vladislav Kurshakov
- * @brief   File contains declarations of the tree structure and a
- *          functionality to plant the tree and initialize forest. 
+ * @brief  	Declaration of the tree structure, functionality to
+ * 			plant the tree and initialize forest, draw tree and
+ * 			their collider. 
  * @version 0.1
  * @date    2022-05-17
  * 

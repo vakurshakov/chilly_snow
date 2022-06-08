@@ -17,16 +17,9 @@ handle_events(int value)
             ball_x = 0;
             ball_speed = 0.09f;
             initialize_forest(time(NULL));
-            glutTimerFunc(0, physics_timer_callback, 0);
+            glutTimerFunc(0, world_update, 0);
             
             game_initialized = 1;
-        }
-
-
-        extern intersection_state g_state;
-        if (g_state == INTERSECTING)
-        {
-            g_game_state == END;
         }
     }
     else if (g_game_state == ENTRY)

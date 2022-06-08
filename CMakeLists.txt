@@ -5,8 +5,9 @@ project(chilly_snow)
 find_package(OpenGL REQUIRED)
 
 add_executable(${PROJECT_NAME}
+    src/world_update.c
     src/glut_window.c
-    src/physics.c
+    src/collision.c
     src/drawer.c
     src/events.c
     src/menus.c
@@ -17,7 +18,7 @@ add_executable(${PROJECT_NAME}
     src/main.c
 )
 
-add_compile_definitions(DEBUG) # Game wouldn't stop (collision detection)
+# add_compile_definitions(DEBUG) # Game wouldn't stop (collision detection)
  
 add_subdirectory(external/FreeGLUT)
 

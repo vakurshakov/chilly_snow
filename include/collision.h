@@ -1,19 +1,18 @@
-#ifndef PHYSICS_H
-#define PHYSICS_H
+#ifndef COLLISION_H
+#define COLLISION_H
 
 /**
- * @file    physics.h
- * 
+ * @file    collision.h
  * @author  Vladislav Kurshakov
- * @brief   Physics world update and collision detection.  
+ * @brief   Simple collision detection.
  * @version 0.1
- * @date    2022-05-26
- *
+ * @date    2022-06-08
+ * 
  */
 
-#include "tree.h"
 #include "ball.h"
-#include "glut_window.h" // for FPS and ORTHO_%
+#include "tree.h"
+#include "glut_window.h"    // for g_SCREEN_%
 
 
 #define SIGN(x) (((x) < 0) ? 0 : 1)
@@ -38,15 +37,7 @@ typedef enum intersection_state
 } intersection_state;
 
 
-extern intersection_state g_state;
-
-
-//! @brief Carries physics update
-void
-physics_timer_callback(int value);
-
-
-//! @brief Simplified collision detection
+//! @brief Whether ball intersects the tree
 intersection_state
 check_ball_tree_collision(tree_t tree);
 
@@ -71,4 +62,4 @@ intersection_state
 check_segment_triangle_intersection(vector2 p, vector2 q, vector2 a, vector2 b, vector2 c);
 
 
-#endif // PHYSICS_H
+#endif // COLLISION_H

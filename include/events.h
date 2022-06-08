@@ -10,11 +10,12 @@
  * 
  */
 
-#include "glut_window.h"
-#include "physics.h"
-#include "menus.h"
+#include "glut_window.h"    // for g_game_state
+#include "world_update.h"
+#include "menus.h"  // for menus presets
 
 
+//! @brief Event handler, pass it into glutTimerFunc  
 void
 handle_events(int value);
 

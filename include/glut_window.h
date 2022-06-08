@@ -5,12 +5,13 @@
  * @file    glut_window.h
  * 
  * @author  Vladislav Kurshakov
- * @brief   This header file provides a description for a freeglut window.  
+ * @brief   Description of a freeglut window.  
  * @version 0.1
  * @date    2022-05-17
  *
  */
 
+#include <GL/gl.h>
 #include <GL/freeglut.h>
 
 #define SCREEN_INITPOINT_X      200
@@ -49,7 +50,7 @@ initialize_window(int argc, char *argv[]);
 
 //! @brief Internal. Used to change window size and reset ortho-projection  
 void
-reshape_window_callback(int, int);
+reshape_window_callback(int new_width, int new_height);
 
 
 //! @brief Internal. Used to handle key pressed events

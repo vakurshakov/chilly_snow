@@ -12,14 +12,14 @@
 
 #include <stb_easy_font.h>
 
-#include "glut_window.h"
+#include "glut_window.h"    // for ORTHO_%
 
 
 typedef struct text_t
 {
-    float x, y;
-    char *text;
-    float r, g, b;
+    float x, y;     // Text position
+    char *text;     // Text string
+    float r, g, b;  // Text color
 } text_t;
 
 
