@@ -1,13 +1,21 @@
 ## chilly snow
 
-This is a simple game, using glut.
+This is a simple game, written in C and using glut.
 
-Configure and build with cmake.
+To install, clone the repo with
+```
+  git clone https://github.com/vakurshakov/chilly_snow
+```
+and update used submodules:
+```
+  git submodule update --init --recursive
+```
 
-Shell straightforward commands:
+Build everything with cmake, shell straightforward commands:
+```
+  GenerateProject.sh
+  BuildProject.sh
+  RunProject.sh
+```
 
-    ./GenerateProject.sh
-    ./BuildProject.sh
-    ./RunProject.sh
-
-Use arrows as a control key.
+Use `arrows` as a control keys.
